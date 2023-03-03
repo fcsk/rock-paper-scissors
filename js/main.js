@@ -1,7 +1,7 @@
 // @ts-nocheck
 const selectedDiV = document.querySelector(".player-weapon");
-let playerResult = 0;
-let computerResult = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 selectedDiV?.addEventListener("click", function (event) {
   let value = "";
@@ -13,13 +13,15 @@ selectedDiV?.addEventListener("click", function (event) {
   } else if (string == "icon-hand-grab-o" || string == "rock") {
     value = "rock";
   }
+  
   const playerValue = value;
   const computerValue = GenerateComputerChoose();
-  console.log("Grasz wybrał", value);
+  console.log("Grasz wybrał", playerValue);
   console.log("Komputer wybrał", computerValue);
   setTimeout(GenerateComputerDIV(computerValue), 700);
   RemoveComputerDiv()
-  setTimeout(ComparePlayerToComputer(playerValue, computerValue),720);
+  ComparePlayerToComputer(playerValue, computerValue);
+  
 });
 
 function GenerateComputerChoose() {
@@ -30,17 +32,32 @@ function GenerateComputerChoose() {
 }
 
 function ComparePlayerToComputer(PlayerValue, ComputerValue) {
+  let player = 'p';
+  let computer = 'c';
+  let draw ='d';
   
   if (PlayerValue == ComputerValue) {
+
     document.getElementById("computer-choose").innerHTML = "It's a draw";
+    return CounterResult(draw);
   } else if (PlayerValue == "scissors" && ComputerValue == "rock") {
+
     document.getElementById("computer-choose").innerHTML = "Computer won";
+    return CounterResult(computer);
+
   } else if (PlayerValue == "paper" && ComputerValue == "scissors") {
+
     document.getElementById("computer-choose").innerHTML = "Computer won";
+    return CounterResult(computer);
+
   } else if (PlayerValue == "rock" && ComputerValue == "paper") {
+
     document.getElementById("computer-choose").innerHTML = "Computer won";
+    return computer;
   } else {
+
     document.getElementById("computer-choose").innerHTML = "You won";
+    return CounterResult(player);
   }
 }
 
@@ -48,10 +65,6 @@ function GenerateComputerDIV(computerValue) {
       const iElement = document.createElement('i');
       const opponentDiv = document.createElement('div');
       const resultdiv = document.querySelector('.result');
-      
-     
-
-      
 
       if (computerValue == "scissors") {
 
@@ -91,15 +104,22 @@ function RemoveComputerDiv(){
         
 
 }
-/*
-function calculateResult (){
-  if(win=="Wygrywasz") {
-    playerResult++;
+
+function CounterResult(result) {
+
+  if(result ==='p') {
+    playerScore++;
+    console.log("PlayerScore: ",playerScore);
+  } else if (result ==='c') {
+    computerScore++;
+    console.log("Komputer score: ",computerScore);
+  } else if ( result ==='d') {
+    console.log("remis");
   } else {
-    computerResult++;
+    console.log("Wystąpił błąd");
   }
 
-  return playerResult,computerResult;
-}
+  console.log( "Komputer score after: ", computerScore);
+  
 
-*/
+}
