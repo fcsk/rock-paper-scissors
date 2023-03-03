@@ -5,6 +5,10 @@ html,body {
 
 }
 
+h1 {
+  font-size: 1.6;
+}
+
 
 .container {
     display: flex;
@@ -25,6 +29,7 @@ html,body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
   
   .result {
@@ -86,28 +91,29 @@ html,body {
 
 
   .rock {
-    transition: 0.3s;
+    transition: .3s;
     background-color: rgb(17, 129, 15);
   }
 
   .paper {
-    transition: 0.3s;
+    transition: .3s;
     background-color: rgb(44, 177, 177);
   }
 
   
   .scissors {
-    transition: 0.3s;
+    transition: .3s;
     background-color: orange;
   }
 
 
   .rock:hover {
-    transition: 0.3s;
+    transition: 1s;
     background-color: rgb(13, 96, 12);
   }
 
   .paper:hover {
+    transition: 1s;
     background-color: rgb(36, 149, 149);
   }
 
@@ -116,3 +122,4 @@ html,body {
     transition: 1s;
     background-color: rgb(184, 120, 1);
   }
+
