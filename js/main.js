@@ -1,5 +1,7 @@
 // @ts-nocheck
 const selectedDiV = document.querySelector(".player-weapon");
+const resetButton = document.querySelector(".button-reset");
+console.log(resetButton);
 let playerScore = 0;
 let computerScore = 0;
 
@@ -120,6 +122,24 @@ function CounterResult(result) {
   }
 
   console.log( "Komputer score after: ", computerScore);
-  
-
+  console.log( "Player score after: ", playerScore);
+  AddScoreToSite(computerScore,playerScore);
 }
+
+function AddScoreToSite(computerScore,playerScore) {
+
+    /* no concept for now */ 
+
+    
+}
+
+
+ resetButton.addEventListener("click", function () {
+   document.getElementById("computer-choose").innerHTML = "";
+   document.querySelector(".opponent")?.remove();
+   playerScore = 0;
+   computerScore = 0;
+
+   console.log(" po resecie computer: ", computerScore);
+   console.log("po resecie grasz: ", playerScore);
+ });

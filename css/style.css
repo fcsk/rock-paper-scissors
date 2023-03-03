@@ -123,3 +123,26 @@ h1 {
     background-color: rgb(184, 120, 1);
   }
 
+  .button-reset {
+    min-width: 3.5rem;
+    height: 2rem;
+    background-color: orange;
+    color: bisque;
+    border: none;
+    border-radius: 2rem;
+  }
+
+
+  .button-reset:active {
+    min-width: 3.5rem;
+    height: 2rem;
+    transition: .3s;
+    background-color: rgb(180, 119, 7);
+    color: bisque;
+    border: none;
+    border-radius: 2rem;
+  }
+
+li {
+  list-style-type: none;
+}
