@@ -16,8 +16,9 @@ selectedDiV?.addEventListener("click", function (event) {
   const computerValue = GenerateComputerChoose();
   console.log("Grasz wybrał", value);
   console.log("Komputer wybrał", computerValue);
-  setTimeout(GenerateComputerDIV, 500);
+  setTimeout(GenerateComputerDIV(computerValue), 500);
   ComparePlayerToComputer(playerValue, computerValue);
+  RemoveComputerDiv()
 });
 
 function GenerateComputerChoose() {
@@ -45,19 +46,55 @@ function ComparePlayerToComputer(PlayerValue, ComputerValue) {
   }
 }
 
-function GenerateComputerDIV() {
+function GenerateComputerDIV(computerValue) {
       const iElement = document.createElement('i');
       const opponentDiv = document.createElement('div');
       const resultdiv = document.querySelector('.result');
-      opponentDiv.classList.add('opponent');
-      iElement.classList.add("icon-hand-grab-o");
-      opponentDiv.append(iElement);
-      resultdiv.appendChild(opponentDiv);
+     
 
-      console.log(opponentDiv);
+      
 
+      if (computerValue == "scissors") {
+
+        iElement.classList.add("icon-hand-scissors-o");
+        let text = document.createTextNode("scissors");
+        opponentDiv.classList.add('opponent');
+        iElement.appendChild(text);
+        opponentDiv.append(iElement);
+        resultdiv.appendChild(opponentDiv);
+
+
+      } else if (computerValue == "rock") {
+
+        iElement.classList.add("icon-hand-grab-o");
+        let text = document.createTextNode("rock");
+        opponentDiv.classList.add('opponent');
+        iElement.appendChild(text);
+        opponentDiv.append(iElement);
+        resultdiv.appendChild(opponentDiv);
+
+        
+      } else if (computerValue == "paper") {
+
+        iElement.classList.add("icon-hand-paper-o");
+        let text = document.createTextNode("paper");
+        opponentDiv.classList.add('opponent');
+        iElement.appendChild(text);
+        opponentDiv.append(iElement);
+        resultdiv.appendChild(opponentDiv);
+
+      }
 }
 
+function RemoveComputerDiv(){
+
+  setTimeout(function() {
+    document.querySelector(".opponent")?.remove();
+  }, 1300);
+        
+
+}
+/*
 function calculateResult (){
   if(win=="Wygrywasz") {
     playerResult++;
@@ -67,3 +104,5 @@ function calculateResult (){
 
   return playerResult,computerResult;
 }
+
+*/

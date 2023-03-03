@@ -30,7 +30,6 @@ html,body {
   .result {
     display: flex;
     flex: 1 0 100%;
-
     justify-content: center;
     height: 30%;
     align-items: center;
@@ -61,17 +60,23 @@ html,body {
   }
 
   .opponent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    height: 10rem;
-    width: 9rem;
-    margin: 0.2rem 1rem;
+    display: block;
+    text-align: center;
+    font-size: 3rem; 
+    max-height: 10rem;
+    min-height: 10rem;
+    max-width: 10rem;
+    min-width: 10rem;
+    padding: 1rem;
     border-radius: 5%;
     background-color: rgb(209, 24, 24);
+    line-height: 10rem;
+    overflow: hidden;
     
-  
+  }
+
+  .opponent i {
+    text-align: center;
   }
 
   .rock p , .paper p , .scissors p {
