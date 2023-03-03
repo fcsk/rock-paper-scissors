@@ -128,7 +128,7 @@ function CounterResult(result) {
 
 function AddScoreToSite(computerScore,playerScore) {
 
-    /* no concept for now */ 
+    /* no concept for now  */ 
 
     
 }
