@@ -60,6 +60,20 @@ html,body {
   
   }
 
+  .opponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    height: 10rem;
+    width: 9rem;
+    margin: 0.2rem 1rem;
+    border-radius: 5%;
+    background-color: rgb(209, 24, 24);
+    
+  
+  }
+
   .rock p , .paper p , .scissors p {
     font-size: 1.7rem;
     margin-top: 0.1rem;

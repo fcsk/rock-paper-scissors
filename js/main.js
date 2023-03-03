@@ -1,4 +1,6 @@
 const selectedDiV = document.querySelector(".player-weapon");
+let playerResult = 0;
+let computerResult = 0;
 
 selectedDiV?.addEventListener("click", function (event) {
   let value = "";
@@ -14,6 +16,7 @@ selectedDiV?.addEventListener("click", function (event) {
   const computerValue = GenerateComputerChoose();
   console.log("Grasz wybrał", value);
   console.log("Komputer wybrał", computerValue);
+  setTimeout(GenerateComputerDIV, 500);
   ComparePlayerToComputer(playerValue, computerValue);
 });
 
@@ -25,6 +28,7 @@ function GenerateComputerChoose() {
 }
 
 function ComparePlayerToComputer(PlayerValue, ComputerValue) {
+  const win = "";
   if (PlayerValue == ComputerValue) {
     return console.log("Remis");
   }
@@ -37,5 +41,29 @@ function ComparePlayerToComputer(PlayerValue, ComputerValue) {
     return console.log("Komputer wygrywa");
   } else {
     return console.log("Wygrywasz");
+    //return win;
   }
+}
+
+function GenerateComputerDIV() {
+      const iElement = document.createElement('i');
+      const opponentDiv = document.createElement('div');
+      const resultdiv = document.querySelector('.result');
+      opponentDiv.classList.add('opponent');
+      iElement.classList.add("icon-hand-grab-o");
+      opponentDiv.append(iElement);
+      resultdiv.appendChild(opponentDiv);
+
+      console.log(opponentDiv);
+
+}
+
+function calculateResult (){
+  if(win=="Wygrywasz") {
+    playerResult++;
+  } else {
+    computerResult++;
+  }
+
+  return playerResult,computerResult;
 }
