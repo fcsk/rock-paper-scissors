@@ -74,7 +74,7 @@ function GenerateComputerDIV(computerValue) {
         opponentDiv.classList.add('opponent');
         opponentDiv.append(iElement);
         resultdiv.appendChild(opponentDiv);
-        document.getElementById("computer-choose").innerHTML = "The computer chose scissors";
+        
 
 
       } else if (computerValue == "rock") {
@@ -83,7 +83,7 @@ function GenerateComputerDIV(computerValue) {
         opponentDiv.classList.add('opponent');
         opponentDiv.append(iElement);
         resultdiv.appendChild(opponentDiv);
-        document.getElementById("computer-choose").innerHTML = "The computer chose rock";
+        
 
         
       } else if (computerValue == "paper") {
@@ -92,7 +92,7 @@ function GenerateComputerDIV(computerValue) {
         opponentDiv.classList.add('opponent');
         opponentDiv.append(iElement);
         resultdiv.appendChild(opponentDiv);
-        document.getElementById("computer-choose").innerHTML = "The computer chose paper";
+       
 
       }
 }
@@ -104,7 +104,6 @@ function RemoveComputerDiv(){
     document.getElementById("computer-choose").innerHTML = "";
   }, 1300);
         
-
 }
 
 function CounterResult(result) {
@@ -126,12 +125,12 @@ function CounterResult(result) {
   AddScoreToSite(computerScore,playerScore);
 }
 
-function AddScoreToSite(computerScore,playerScore) {
-
-    /* no concept for now  */ 
-
-    
+function AddScoreToSite(computerScore, playerScore) {
+  const  menu = document.querySelector('.menu-score');
+  menu.innerHTML ="";
+  menu.innerHTML += `<li>Player: ${playerScore}</li><li>Computer: ${computerScore}</li>`;
 }
+
 
 
  resetButton.addEventListener("click", function () {
@@ -140,6 +139,22 @@ function AddScoreToSite(computerScore,playerScore) {
    playerScore = 0;
    computerScore = 0;
 
+   const  menu = document.querySelector('.menu-score');
+   menu.innerHTML = `<li>Player: 0</li><li>Computer: 0</li>`;
+
+
+
    console.log(" po resecie computer: ", computerScore);
    console.log("po resecie grasz: ", playerScore);
  });
+
+
+
+
+
+ /* Zamiast 3 divow trzeba zrobic 3 przyciski zeby dobrze pobierało wartośći 
+ 
+    i zamiast tworzyć div oponnent zrób diva ukrytego i tylko zmieniaj klasy/ dodadwaj je usuwaj 
+ 
+ 
+ */
