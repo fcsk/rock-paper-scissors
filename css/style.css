@@ -147,3 +147,87 @@ li {
   list-style-type: none;
 }
 
+
+@media only screen and (max-width: 1071px) {
+
+  .container {
+    width: 80%;
+   }
+
+  .rock, .paper, .scissors {
+    font-size: 2rem;
+    height: 11rem;
+    width: 9rem;
+    margin: 0.1rem 0.5rem;
+    
+  }
+  
+  .opponent {
+
+    font-size: 2rem; 
+    max-height: 10rem;
+    min-height: 10rem;
+    max-width: 10rem;
+    min-width: 10rem;
+    line-height: 10rem;
+    overflow: hidden;
+  
+  }
+
+  .title {
+    
+    font-size: 1rem;
+    
+  }
+}
+
+@media only screen and (max-width: 783px) {
+
+  .container {
+    width: 80%;
+   }
+
+  .rock, .paper, .scissors {
+    font-size: 2rem;
+    height: 11rem;
+    width: 9rem;
+    margin: 0.1rem 0.4rem;
+    padding: 0px;
+    
+  }
+
+  .title {
+    
+    font-size: .79rem;
+    
+  }
+
+  .opponent {
+    
+    font-size: 2rem; 
+    max-height: 6rem;
+    min-height: 6rem;
+    max-width: 6rem;
+    min-width: 6rem;
+    line-height: 6rem;
+    overflow: hidden;
+  
+  }
+}
+
+@media only screen and (max-width: 602px) {
+
+  .rock, .paper, .scissors {
+    font-size: 2rem;
+    height: 8rem;
+    width: 6rem;
+    margin: 0.1rem 0.2rem;
+    padding: 0px;
+    
+  }
+
+  .container {
+   width: 100%;
+  }
+
+}
