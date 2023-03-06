@@ -36,6 +36,21 @@ function GenerateComputerChoose() {
   return choiced;
 }
 
+function CounterResult(result) {
+  if (result === "p") {
+    playerScore++;
+  } else if (result === "c") {
+    computerScore++;
+  } else if (result === "d") {
+    computerScore;
+    playerScore;
+  } else {
+    document.getElementById("computer-choose").innerHTML = "Wystąpił błąd";
+  }
+
+  AddScoreToSite(computerScore, playerScore);
+}
+
 function ComparePlayerToComputer(PlayerValue, ComputerValue) {
   let player = "p";
   let computer = "c";
@@ -61,7 +76,7 @@ function ComparePlayerToComputer(PlayerValue, ComputerValue) {
     setTimeout(function () {
       document.getElementById("computer-choose").innerHTML = "Computer won";
     }, 200);
-    return ConuterResult(computer);
+    return CounterResult(computer);
   } else {
     setTimeout(function () {
       document.getElementById("computer-choose").innerHTML = "You won";
@@ -95,21 +110,6 @@ function GenerateComputerDIV(computerValue) {
 function RemoveComputerDiv() {
   document.querySelector(".opponent")?.remove();
   document.getElementById("computer-choose").innerHTML = "";
-}
-
-function CounterResult(result) {
-  if (result === "p") {
-    playerScore++;
-  } else if (result === "c") {
-    computerScore++;
-  } else if (result === "d") {
-    computerScore;
-    playerScore;
-  } else {
-    document.getElementById("computer-choose").innerHTML = "Wystąpił błąd";
-  }
-
-  AddScoreToSite(computerScore, playerScore);
 }
 
 function AddScoreToSite(computerScore, playerScore) {
