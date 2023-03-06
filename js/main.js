@@ -61,7 +61,7 @@ function ComparePlayerToComputer(PlayerValue, ComputerValue) {
     setTimeout(function () {
       document.getElementById("computer-choose").innerHTML = "Computer won";
     }, 200);
-    return computer;
+    return ConuterResult(computer);
   } else {
     setTimeout(function () {
       document.getElementById("computer-choose").innerHTML = "You won";
