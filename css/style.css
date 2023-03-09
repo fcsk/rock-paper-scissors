@@ -1,3 +1,4 @@
+
 html,body {
     background-color: rgb(36, 40, 41);
     height: 98%;
@@ -61,6 +62,9 @@ h1 {
     margin: 0.2rem 1rem;
     border-radius: 5%;
     color:bisque;
+    border-color: black;
+    box-shadow: 2px 1px 1px black;
+    
     
   
   }
@@ -131,6 +135,7 @@ h1 {
     color: bisque;
     border: none;
     border-radius: 2rem;
+    box-shadow: 1px 1px 1px black;
   }
 
 
@@ -172,6 +177,7 @@ li {
     min-width: 10rem;
     line-height: 10rem;
     overflow: hidden;
+    box-shadow: 7px 3px 2px black;
   
   }
 
