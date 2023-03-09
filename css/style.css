@@ -82,6 +82,7 @@ h1 {
     background-color: rgb(209, 24, 24);
     line-height: 10rem;
     overflow: hidden;
+    box-shadow: 7px 4px 1px black;
     
   }
 
@@ -135,7 +136,7 @@ h1 {
     color: bisque;
     border: none;
     border-radius: 2rem;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 1px 2px 3px black;
   }
 
 
