@@ -239,3 +239,46 @@ li {
   }
 
 }
+
+@media only screen and (max-width: 440px) {
+
+  .rock, .paper, .scissors {
+    font-size: 1.2rem;
+    height: 7rem;
+    width: 5rem;
+    
+  }
+
+  .opponent {
+    font-size: 1.2rem; 
+    max-height: 5rem;
+    min-height: 5rem;
+    max-width: 4rem;
+    min-width: 4rem;
+    line-height: 5rem;
+  }
+
+
+}
+
+@media only screen and (max-width: 380px) {
+
+  .rock, .paper, .scissors {
+    font-size: 1.1rem;
+    height: 6rem;
+    width: 4rem;
+    
+  }
+
+  .opponent {
+    font-size: 1.2rem; 
+    max-height: 4rem;
+    min-height: 4rem;
+    max-width: 3rem;
+    min-width: 3rem;
+    line-height: 4rem;
+  }
+
+
+}
+
