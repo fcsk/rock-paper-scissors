@@ -19,11 +19,10 @@ selectedDiV?.addEventListener("click", function (event) {
 
   const playerValue = value;
   let computerValue = GenerateComputerChoose();
-  console.log("Grasz wybrał", playerValue);
-  console.log("Komputer wybrał", computerValue);
+
   setTimeout(function () {
     GenerateComputerDIV(computerValue);
-  }, 200);
+  }, 300);
 
   RemoveComputerDiv();
   ComparePlayerToComputer(playerValue, computerValue);
@@ -87,24 +86,25 @@ function ComparePlayerToComputer(PlayerValue, ComputerValue) {
 
 function GenerateComputerDIV(computerValue) {
   const iElement = document.createElement("i");
-  const opponentDiv = document.createElement("div");
+  let opponentDiv = document.createElement("div");
+
+  if (!resultdiv.querySelector(".opponent")) {
+    opponentDiv.classList.add("opponent");
+    resultdiv.appendChild(opponentDiv);
+  } else {
+    opponentDiv = resultdiv.querySelector(".opponent");
+  }
 
   if (computerValue == "scissors") {
     iElement.classList.add("icon-hand-scissors-o");
-    opponentDiv.classList.add("opponent");
-    opponentDiv.append(iElement);
-    resultdiv.appendChild(opponentDiv);
   } else if (computerValue == "rock") {
     iElement.classList.add("icon-hand-grab-o");
-    opponentDiv.classList.add("opponent");
-    opponentDiv.append(iElement);
-    resultdiv.appendChild(opponentDiv);
   } else if (computerValue == "paper") {
     iElement.classList.add("icon-hand-paper-o");
-    opponentDiv.classList.add("opponent");
-    opponentDiv.append(iElement);
-    resultdiv.appendChild(opponentDiv);
   }
+
+  opponentDiv.innerHTML = "";
+  opponentDiv.append(iElement);
 }
 
 function RemoveComputerDiv() {
